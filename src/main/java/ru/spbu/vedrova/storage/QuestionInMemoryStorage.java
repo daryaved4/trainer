@@ -6,7 +6,7 @@ import ru.spbu.vedrova.domain.repo.QuestionRepository;
 
 import java.util.*;
 
-@Repository
+
 class QuestionInMemoryStorage implements QuestionRepository {
     private final Map<Long, OpenQuestionCard> storage = new HashMap<>();
 

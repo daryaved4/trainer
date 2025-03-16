@@ -6,7 +6,7 @@ import ru.spbu.vedrova.domain.model.OpenQuestionCard;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+
 public interface QuestionRepository {
     List<OpenQuestionCard> findAll();
     Optional<OpenQuestionCard> findById(Long id);
