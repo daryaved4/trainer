@@ -11,14 +11,14 @@ class OpenQuestionCardTest {
 
     @BeforeEach
     void setUp() {
-        card = new OpenQuestionCard("What is Java?", "A programming language");
+        card = new OpenQuestionCard(1L,"What is Java?", "A programming language");
     }
 
     @Test
     @DisplayName("Должно выбрасываться исключение, если вопрос null")
     void shouldThrowExceptionWhenQuestionIsNull() {
         Exception exception = assertThrows(IllegalArgumentException.class, () ->
-                new OpenQuestionCard(null, "answer"));
+                new OpenQuestionCard(1L,null, "answer"));
         assertEquals("question не может быть пустым", exception.getMessage());
     }
 
@@ -26,7 +26,7 @@ class OpenQuestionCardTest {
     @DisplayName("Должно выбрасываться исключение, если вопрос пустая строка")
     void shouldThrowExceptionWhenQuestionIsEmpty() {
         Exception exception = assertThrows(IllegalArgumentException.class, () ->
-                new OpenQuestionCard("", "answer"));
+                new OpenQuestionCard(1L,"", "answer"));
         assertEquals("question не может быть пустым", exception.getMessage());
     }
 
@@ -34,7 +34,7 @@ class OpenQuestionCardTest {
     @DisplayName("Должно выбрасываться исключение, если ожидаемый ответ null")
     void shouldThrowExceptionWhenExpectedAnswerIsNull() {
         Exception exception = assertThrows(IllegalArgumentException.class, () ->
-                new OpenQuestionCard("question", null));
+                new OpenQuestionCard(1L,"question", null));
         assertEquals("expectedAnswer не может быть пустым", exception.getMessage());
     }
 
@@ -42,7 +42,7 @@ class OpenQuestionCardTest {
     @DisplayName("Должно выбрасываться исключение, если ожидаемый ответ пустая строка")
     void shouldThrowExceptionWhenExpectedAnswerIsEmpty() {
         Exception exception = assertThrows(IllegalArgumentException.class, () ->
-                new OpenQuestionCard("question", ""));
+                new OpenQuestionCard(1L,"question", ""));
         assertEquals("expectedAnswer не может быть пустым", exception.getMessage());
     }
 
