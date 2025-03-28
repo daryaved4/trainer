@@ -55,7 +55,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                ru.suman.console.Application
+                                ru.vedrova.console.Application
                             </mainClass>
                         </manifest>
                     </archive>
